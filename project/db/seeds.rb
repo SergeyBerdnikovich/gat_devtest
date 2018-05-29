@@ -45,3 +45,15 @@ LOCATIONS.each do |location|
     secret_code: SecureRandom.hex(64)
   )
 end
+
+panel_providers = PanelProvider.all.to_a << PanelProvider.first
+
+locations = Location.all
+
+panel_providers.each do |panel_provider|
+  country = panel_provider.countries.first
+
+  location_group = panel_provider.location_groups.create!(name: "PPC: #{panel_provider.code}/CC: #{country.code}",
+                                                          country: country)
+  location_group.locations << locations.sample(5)
+end
