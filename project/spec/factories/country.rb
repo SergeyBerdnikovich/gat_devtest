@@ -15,5 +15,16 @@ FactoryBot.define do
                                                  country_id:        country.id
       end
     end
+
+    trait :with_target_groups do
+      transient do
+        child_nodes_count 3
+      end
+
+      after(:create) do |country, evaluator|
+        create :target_group, :with_child_nodes, panel_provider:    country.panel_provider,
+                                                 child_nodes_count: evaluator.child_nodes_count
+      end
+    end
   end
 end

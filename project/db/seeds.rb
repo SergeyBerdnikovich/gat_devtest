@@ -56,4 +56,12 @@ panel_providers.each do |panel_provider|
   location_group = panel_provider.location_groups.create!(name: "PPC: #{panel_provider.code}/CC: #{country.code}",
                                                           country: country)
   location_group.locations << locations.sample(5)
+
+  target_group = panel_provider.target_groups.create!(name: "Root node for PPC: #{panel_provider.code}",
+                                                      external_id: SecureRandom.uuid,
+                                                      secret_code: SecureRandom.hex(64),
+                                                      parent_id: nil)
+  3.times do |i|
+    target_group = target_group.child_nodes.create!(name: "Child node, level #{i + 1}", panel_provider: panel_provider)
+  end
 end

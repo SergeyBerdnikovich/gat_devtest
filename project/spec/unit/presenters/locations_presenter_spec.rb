@@ -20,7 +20,7 @@ describe LocationsPresenter do
           name:        location2.name,
           external_id: location2.external_id,
           secret_code: location2.secret_code
-        },
+        }
       ]
     end
 
