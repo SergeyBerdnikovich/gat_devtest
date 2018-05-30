@@ -16,6 +16,7 @@ module DevTest
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
-    config.price_calculation = config_for(:price_calculation)
+    config.price_calculation   = config_for(:price_calculation)
+    config.http_authentication = config_for(:http_authentication)
   end
 end

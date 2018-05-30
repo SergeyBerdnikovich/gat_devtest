@@ -1,4 +1,6 @@
 class Api::Internal::EvaluateTargetsController < ApplicationController
+  include HttpAuthentication
+
   def create
     if params_validator.valid?
       target_evaluator.evaluate

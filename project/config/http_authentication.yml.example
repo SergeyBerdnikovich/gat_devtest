@@ -1,0 +1,9 @@
+default: &default
+  username: gat
+  password: devtest
+
+development:
+  <<: *default
+
+test:
+  <<: *default
