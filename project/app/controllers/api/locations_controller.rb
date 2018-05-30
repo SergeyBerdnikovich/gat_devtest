@@ -8,7 +8,7 @@ class Api::LocationsController < ApplicationController
   private
 
   def locations_fetcher
-    @locations_fetcher ||= LocationsFetcher.new(params[:country_code])
+    @locations_fetcher ||= Fetchers::LocationsFetcher.new(params[:country_code])
   end
 
   def locations_presenter(locations)

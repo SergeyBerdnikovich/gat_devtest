@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe LocationsFetcher do
+describe Fetchers::LocationsFetcher do
   subject { described_class.new(country_code) }
 
   describe '#fetch_locations' do

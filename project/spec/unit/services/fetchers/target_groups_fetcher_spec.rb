@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe TargetGroupsFetcher do
+describe Fetchers::TargetGroupsFetcher do
   subject { described_class.new(country_code) }
 
   describe '#fetch_target_groups' do

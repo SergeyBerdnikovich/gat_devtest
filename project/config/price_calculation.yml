@@ -1,0 +1,25 @@
+default: &default
+  times_a:
+    target_url: 'http://time.com'
+    counter_class: 'Counters::LetterCounter'
+    target_type: 'string'
+    divider: 100.0
+  10_arrays:
+    target_url: 'http://openlibrary.org/search.json?q=the+lord+of+the+rings'
+    counter_class: 'Counters::ArrayCounter'
+    target_type: 'json'
+    divider: 1
+  times_html:
+    target_url: 'http://time.com'
+    counter_class: 'Counters::NodesCounter'
+    target_type: 'string'
+    divider: 100.0
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default

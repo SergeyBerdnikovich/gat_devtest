@@ -1,14 +1,14 @@
-class LocationsFetcher
+class Fetchers::TargetGroupsFetcher
   attr_reader :country_code
-  attr_reader :locations
+  attr_reader :target_groups
 
   def initialize(country_code)
     @country_code = country_code
   end
 
-  def fetch_locations
+  def fetch_target_groups
     fetch_country
-    fetch_uniq_country_locations
+    _fetch_target_groups
   end
 
   private
@@ -19,11 +19,11 @@ class LocationsFetcher
     @country = Country.find_by(code: country_code)
   end
 
-  def fetch_uniq_country_locations
-    @locations = if country.blank?
+  def _fetch_target_groups
+    @target_groups = if country.blank?
                    []
                  else
-                   country.locations.uniq
+                   country.target_groups
                  end
   end
 end

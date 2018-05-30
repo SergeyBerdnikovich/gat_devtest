@@ -8,7 +8,7 @@ class Api::TargetGroupsController < ApplicationController
   private
 
   def target_groups_fetcher
-    @target_groups_fetcher ||= TargetGroupsFetcher.new(params[:country_code])
+    @target_groups_fetcher ||= Fetchers::TargetGroupsFetcher.new(params[:country_code])
   end
 
   def target_groups_presenter(target_groups)
