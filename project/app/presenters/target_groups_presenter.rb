@@ -1,3 +1,31 @@
+# Representer for collection of target groups
+#
+# @params
+#   locations [Array<TargetGroup>] array of target groups
+#
+# @return
+#   represented target groups [Array<Hash>] array of represented target groups
+#
+# @example
+#   [
+#     {
+#       id: 1,
+#       name: 'Group A',
+#       external_id: 1,
+#       parent_id: nil,
+#       secred_code: 1
+#       panel_provider_id: 1
+#     },
+#     {
+#       id: 2,
+#       name: 'Group A/B',
+#       external_id: nil,
+#       parent_id: 1,
+#       secred_code: nil
+#       panel_provider_id: 1
+#     },
+#   ]
+#
 class TargetGroupsPresenter
   attr_reader :target_groups
 

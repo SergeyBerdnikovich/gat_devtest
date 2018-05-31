@@ -1,5 +1,19 @@
 require 'rest-client'
 
+# Service for fetching data from external storage(host in our case)
+#
+# The data are fetched through http GET request
+#
+# Dependent on deifferent panel providers codes it can fetch data from different hosts
+#
+# Mapping code -> url is located in config/price_calculation.yml
+#
+# @params
+#   panel_provider_code - [String] PanelProvider code
+#
+# @return
+#   data [String] raw data
+#
 class Fetchers::ExternalDataFetcher
   attr_reader :panel_provider_code
 

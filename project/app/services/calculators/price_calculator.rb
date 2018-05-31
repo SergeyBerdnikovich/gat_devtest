@@ -1,3 +1,11 @@
+# Service for calculating price
+#
+# @params
+#   panel_provider_code [String] PanelProvider code
+#
+# @return
+#   price [Integer, Float] calculated price
+#
 class Calculators::PriceCalculator
   attr_reader :panel_provider_code
   attr_reader :price

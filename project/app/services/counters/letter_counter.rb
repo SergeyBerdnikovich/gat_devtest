@@ -1,3 +1,11 @@
+# Service for counting letter 'a'
+#
+# @params
+#   data [String] data which can contains letter 'a'
+#
+# @return
+#   number [Integer] number of latter 'a' in the data
+#
 class Counters::LetterCounter
   LETTER = 'a'.freeze
 

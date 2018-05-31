@@ -1,3 +1,11 @@
+# Service for fetching target groups
+#
+# @params
+#   country_code [String] country code
+#
+# @return
+#   location [Array] array of target groups - can be empty
+#
 class Fetchers::TargetGroupsFetcher
   attr_reader :country_code
   attr_reader :target_groups

@@ -1,3 +1,17 @@
+# Service object for validating params
+#
+# @params
+#   hash of data [Hash] data which should be validated
+#     country_code [String] country code                       - (mandatory) (can be UK, US or PL)
+#     target_group_id [String, Integer] target group id        - (mandatory)
+#     locations [Array<Hash>] array of hashes of location data - (mandatory)
+#       location [Hash] location data
+#         id [String, Integer] location id
+#         panel_size [String, Integer] panel size
+#
+#  @return
+#    true/false [TrueClass, FalseClass] validation mark
+#
 class TargetParamsValidator
   MANDATORY_LOCATION_KEYS = %i(id panel_size).freeze
 

@@ -1,3 +1,11 @@
+# Service for building counter dependent on panel provider code
+#
+# @params
+#   panel_provider_code [String] PanelProvider code
+#
+# @return
+#   counter [Counters::ArrayCounter, Counters::LetterCounter, Counters::NodesCounter] instance of counter
+#
 class Counters::CounterBuilder
   attr_reader :panel_provider_code
   attr_reader :counter

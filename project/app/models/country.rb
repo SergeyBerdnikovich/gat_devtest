@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: countries
+#
+#  id                :integer          not null, primary key
+#  code              :string           not null
+#  panel_provider_id :integer          not null
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
+
 class Country < ApplicationRecord
   belongs_to :panel_provider
   has_many :country_groups

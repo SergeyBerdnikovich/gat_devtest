@@ -1,3 +1,21 @@
+# Presenter for representing target froup object
+#
+# @params
+#   target_group [TargetGroup] target group
+#
+# @return
+#   attributes [Hash] represented target_group
+#
+# @example
+#   {
+#     id: 1,
+#     name: 'Group A',
+#     external_id: 1,
+#     parent_id: nil,
+#     secred_code: 1
+#     panel_provider_id: 1
+#   }
+#
 class TargetGroupPresenter
   attr_reader :target_group
 

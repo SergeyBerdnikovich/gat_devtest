@@ -1,3 +1,11 @@
+# Service for fetching locations
+#
+# @params
+#   country_code [String] country code
+#
+# @return
+#   location [Array] array of unique locations - can be empty
+#
 class Fetchers::LocationsFetcher
   attr_reader :country_code
   attr_reader :locations

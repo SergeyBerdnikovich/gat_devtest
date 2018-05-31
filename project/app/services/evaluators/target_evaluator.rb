@@ -1,3 +1,16 @@
+# Service for evaluating targe
+#
+# @params
+#   params [Hash] hash of data
+#     country_code [String] country code
+#     target_group_id [String, Integer] target group id          - not used in service now
+#     locations [Array<Hash>] array of hashes with location data - not used in service now
+#       id [String, Integer] location id
+#       panel_size [String, Integer] panel size
+#
+# @return
+#   price [Integer, Float] calculated price
+#
 class Evaluators::TargetEvaluator
   attr_reader :params
   attr_reader :price

@@ -1,6 +1,31 @@
 class Api::Internal::EvaluateTargetsController < ApplicationController
   include HttpAuthentication
 
+  # Action for evaluating target
+  #
+  # [POST]
+  #
+  # @params
+  #   cauntry_code [String] country code
+  #   target_group_id [String, Integer] target group id
+  #   locations [Array<Hash>] array of hashes of location data
+  #
+  # @authentication
+  #   basic-authenication - the credentials are located in clonfig/http_authentication.yml
+  #   Should be used through HTTPS
+  #
+  # @return
+  #   price [JSON] Hash with price value or hash with error message
+  #
+  # @example
+  #   {
+  #     price: 12.12
+  #   }
+  #
+  #   {
+  #     errors: 'Country code is not included in the list'
+  #   }
+  #
   def create
     if params_validator.valid?
       target_evaluator.evaluate

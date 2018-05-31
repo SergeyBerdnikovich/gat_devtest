@@ -1,3 +1,11 @@
+# Service for counting arrays with 10 or more elements
+#
+# @params
+#   data [Array, Hash] data wich contains arrays
+#
+# @return
+#   number [integer] number of arrays with 10 or more elements
+#
 class Counters::ArrayCounter
   ELEMENTS_AMOUNT = 10
 
